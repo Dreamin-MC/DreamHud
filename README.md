@@ -113,8 +113,8 @@ DreamHud is part of the **Dreamin Ecosystem**, a set of modular projects designe
 
 | État | Version        | Compatibilité             |
 |------|----------------|---------------------------|
-| 🧪 En développement actif | `v1.0.0`       | Paper 1.21.8              |
-| 🔜 Migration finale | `DreamHud` (v2) | API stable et publique prévue |
+| 🧪 Under active development | `v1.0.0`       | Paper 1.21.8              |
+| 🔜 Final migration | `DreamHud` (v2) | Stable and public API planned |
 
 > ⚠️ *The current version (DreamHud v1) serves as the technical foundation for DreamHud v2.
 Major API changes are to be expected.*

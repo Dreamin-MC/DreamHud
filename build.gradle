@@ -1,0 +1,116 @@
+plugins {
+  id 'java'
+  id 'java-library'
+  id 'maven-publish'
+  id("xyz.jpenilla.run-paper") version "2.3.1"
+  id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'fr.dreamin'
+version = '1.0.0'
+description = "API for manage Hud"
+
+def name = "DreamHud"
+def author = "Dreamin"
+
+repositories {
+  mavenCentral()
+  mavenLocal()
+  maven { url "https://repo.papermc.io/repository/maven-public/" }
+  maven { url "https://oss.sonatype.org/content/groups/public/" }
+  maven { url "https://repo.extendedclip.com/releases/" }
+  maven { url "https://repo.codemc.org/repository/maven-public/" }
+  maven { url "https://jitpack.io" }
+}
+
+// Define versions in variables for easy updating
+def lombokVersion = "1.18.30"
+def cloudCommandFrameworkVersion = "1.8.4"
+
+dependencies {
+  compileOnly("io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT")
+
+  // Lombok for getters/setters and more
+  compileOnly ("org.projectlombok:lombok:$lombokVersion")
+  annotationProcessor ("org.projectlombok:lombok:$lombokVersion")
+
+  // Jackson for JSON handling
+  compileOnly("com.fasterxml.jackson.core:jackson-databind:2.19.1")
+
+  // Cloud CommandFramework
+  implementation("cloud.commandframework:cloud-paper:$cloudCommandFrameworkVersion")
+  implementation("cloud.commandframework:cloud-annotations:$cloudCommandFrameworkVersion")
+
+  // McTools library
+  implementation files("libs/mctools.jar")
+
+  testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.10.2")
+  testImplementation("org.mockito:mockito-core:5.14.2")
+  testImplementation("org.mockito:mockito-junit-jupiter:5.14.2")
+  testImplementation("org.mockito:mockito-inline:5.14.2")
+}
+
+tasks {
+  runServer {
+    minecraftVersion("1.21.8")
+  }
+}
+
+def targetJavaVersion = 21
+java {
+  def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+  sourceCompatibility = javaVersion
+  targetCompatibility = javaVersion
+  if (JavaVersion.current() < javaVersion) {
+    toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+  }
+
+  withSourcesJar()
+  withJavadocJar()
+}
+
+tasks {
+  compileJava {
+    options.encoding = "UTF-8"
+    options.release.set(targetJavaVersion)
+  }
+}
+
+tasks.withType(JavaCompile).configureEach {
+  options.encoding = 'UTF-8'
+
+  if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+    options.release.set(targetJavaVersion)
+  }
+}
+
+tasks.withType(Test).configureEach {
+  useJUnitPlatform()
+}
+
+tasks.withType(Javadoc).configureEach {
+  enabled = false
+}
+
+processResources {
+  def props = [name: name, version: version, author: author]
+  inputs.properties props
+  filteringCharset 'UTF-8'
+  filesMatching('paper-plugin.yml') {
+    expand props
+  }
+}
+
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+
+      groupId = group
+      artifactId = name // ton nom d’artifact
+      version = version
+    }
+  }
+}

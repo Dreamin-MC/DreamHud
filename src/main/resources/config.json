@@ -1,0 +1,17 @@
+{
+  "bar_color": "YELLOW",
+  "debug": false,
+  "namespace": "hudlib",
+  "desc": "HudLib pack",
+  "default_font_name": "font.ttf",
+  "build_folder_location": "build",
+  "pack_type": "folder",
+  "force_update": false,
+  "self_host_ip": "*",
+  "self_host_port": 8163,
+  "merge_other_folders": [],
+  "default_hud": [],
+  "default_popup": [],
+  "resourcepack_obfuscation": false
+
+}

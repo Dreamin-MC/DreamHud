@@ -1,0 +1,6 @@
+name: ${name}
+version: ${version}
+website: "https://dreamin.fr"
+main: fr.dreamin.dreamHud.DreamHud
+api-version: '1.21.8'
+authors: ${author}

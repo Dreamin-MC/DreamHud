@@ -38,7 +38,7 @@ DreamHud is **used in production** on projects within the **Dreamin'** ecosystem
 ### 🧱 Project Structure
 
 ```
-📦 HudLib
+📦 DreamHud
 ┣ 📁 changelog/
 ┃ ┗ … (file changelog.)
 ┣ 📁 assets/

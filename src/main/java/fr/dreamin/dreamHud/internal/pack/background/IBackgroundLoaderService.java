@@ -96,10 +96,8 @@ public final class IBackgroundLoaderService implements DreaminService, Backgroun
   @Override
   public Component generateBackground(int size, @NotNull String name) {
     final var bg = this.backgrounds.get(name);
-    if (bg == null) {
-      this.plugin.getLogger().warning(String.format("Background introuvable : %s", name));
+    if (bg == null)
       return Component.empty();
-    }
 
     final var negativeSpace = resolveNegativeSpaceComponent(name);
     if (negativeSpace.isEmpty()) return Component.empty();
@@ -131,10 +129,8 @@ public final class IBackgroundLoaderService implements DreaminService, Backgroun
   @Override
   public int getTotalNegativeOffset(int size, @NotNull String name) {
     final var bg = this.backgrounds.get(name);
-    if (bg == null) {
-      this.plugin.getLogger().warning(String.format("Background introuvable : %s", name));
+    if (bg == null)
       return 0;
-    }
 
     final var negativeSpace = resolveNegativeSpaceComponent(name);
     if (negativeSpace.isEmpty()) return 0;
@@ -159,10 +155,9 @@ public final class IBackgroundLoaderService implements DreaminService, Backgroun
   @Override
   public int getRealWidth(int size, @NotNull String name) {
     final var bg = this.backgrounds.get(name);
-    if (bg == null) {
-      this.plugin.getLogger().warning(String.format("Background introuvable : %s", name));
+    if (bg == null)
       return 0;
-    }
+
 
     var totalWidth = 0;
     totalWidth += bg.getStart().size();

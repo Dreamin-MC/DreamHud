@@ -1,7 +1,7 @@
 # 🧠 DreamHud — API Usage Guide
 
 > Complete documentation for the **DreamHud API**.  
-> Designed for developers integrating or extending DreamHud within Minecraft Paper 1.20+ servers.
+> Designed for developers integrating or extending DreamHud within Minecraft Paper 1.21.8 servers.
 
 ---
 
@@ -41,7 +41,7 @@ Add DreamHud to your project using **Maven** or **Gradle**.
 <dependency>
   <groupId>com.github.Dreamin-MC</groupId>
   <artifactId>DreamHud</artifactId>
-  <version>v1.0.0</version>
+  <version>v1.0.1</version>
 </dependency>
 ```
 
@@ -51,7 +51,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 dependencies {
-    compileOnly 'com.github.Dreamin-MC:DreamHud:v1.0.0'
+    compileOnly 'com.github.Dreamin-MC:DreamHud:v1.0.1'
 }
 ```
 
@@ -185,7 +185,7 @@ Multiple HUDs can be layered on the same bossbar using different z-index values:
 
 | Version  | Status | Notes                                          |
 |----------|---------|------------------------------------------------|
-| `v1.0.0` | 🧪 Active Development | First public beta compatible with Paper 1.21.8 |
+| `v1.0.1` | 🧪 Active Development | First public beta compatible with Paper 1.21.8 |
 | `v2.x`   | 🔜 Planned | Major refactor & API stabilization             |
 
 **Compatibility:**  

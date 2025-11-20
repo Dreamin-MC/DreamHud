@@ -1,6 +1,6 @@
 # ✨ DreamHud
 
-[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](https://github.com/dreamin/dreamintablist)
+[![Version](https://img.shields.io/badge/version-1.0.2-blue.svg)](https://github.com/dreamin/dreamintablist)
 [![](https://jitpack.io/v/Dreamin-MC/DreamHud.svg)](https://jitpack.io/#Dreamin-MC/DreamHud)
 [![Java](https://img.shields.io/badge/java-21-orange.svg)](https://www.oracle.com/java/)
 [![Minecraft](https://img.shields.io/badge/minecraft-1.21.8-green.svg)](https://www.minecraft.net/)
@@ -113,7 +113,7 @@ DreamHud is part of the **Dreamin Ecosystem**, a set of modular projects designe
 
 | État | Version         | Compatibilité             |
 |------|-----------------|---------------------------|
-| 🧪 Under active development | `v1.0.1`        | Paper 1.21.8              |
+| 🧪 Under active development | `v1.0.2`        | Paper 1.21.8              |
 | 🔜 Final migration | `DreamHud` (v2) | Stable and public API planned |
 
 > ⚠️ *The current version (DreamHud v1) serves as the technical foundation for DreamHud v2.

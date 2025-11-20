@@ -39,6 +39,8 @@ import java.util.function.Supplier;
 @SuperBuilder
 public final class TextElement extends Element {
 
+  private final @NotNull CodexService codexService = DreamHud.getService(CodexService.class);
+
   private final @NotNull Supplier<String> textSupplier;
 
   // ###############################################################
@@ -47,11 +49,13 @@ public final class TextElement extends Element {
 
   @Override
   public @NotNull Component toComponent() {
-    final var codexService = DreamHud.getService(CodexService.class);
-
     TextColor color = this.getColor();
     ShadowColor shadowColor = this.isShadow() ? this.getShadowColor() : ShadowColor.none();
-    Key font = this.getFont() != null ? Key.key(codexService.getConfig().namespace, String.format("font_%s", this.getFont())) : null;
+
+    Key font = null;
+    if (this.getFontString() != null)
+      font = Key.key(this.codexService.getConfig().namespace, String.format("font_%s", this.getFontString()));
+    else if (this.getFont() != null) font = this.getFont();
 
     return Component.text(this.textSupplier.get())
       .color(color == null ? NamedTextColor.WHITE : color)
@@ -63,6 +67,7 @@ public final class TextElement extends Element {
   @Override
   public int getPixelWidth() {
     final var fontLoader = DreamHud.getService(FontLoaderService.class);
-    return fontLoader.getStringWidth(this.textSupplier.get(), getFont());
+
+    return fontLoader.getStringWidth(this.textSupplier.get(), getFontString() != null ? getFontString() : getFont().value());
   }
 }

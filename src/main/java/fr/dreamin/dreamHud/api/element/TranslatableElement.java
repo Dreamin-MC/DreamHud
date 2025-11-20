@@ -55,7 +55,11 @@ public final class TranslatableElement extends Element {
 
     TextColor color = this.getColor();
     ShadowColor shadowColor = this.isShadow() ? this.getShadowColor() : ShadowColor.none();
-    Key font = Key.key(codexService.getConfig().namespace, String.format("font_%s", this.getFont()));
+
+    Key font = null;
+    if (this.getFontString() != null)
+      font = Key.key(codexService.getConfig().namespace, String.format("font_%s", this.getFontString()));
+    else if (this.getFont() != null) font = this.getFont();
 
     return Component.translatable(this.key, getElementsComponent())
       .color(color == null ? NamedTextColor.WHITE : color)

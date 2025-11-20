@@ -2,7 +2,7 @@
   "bar_color": "YELLOW",
   "debug": false,
   "namespace": "hudlib",
-  "desc": "HudLib pack",
+  "desc": "DreamHud pack",
   "default_font_name": "font.ttf",
   "build_folder_location": "build",
   "pack_type": "folder",

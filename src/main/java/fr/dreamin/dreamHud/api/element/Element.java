@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.Singular;
 import lombok.experimental.SuperBuilder;
+import net.kyori.adventure.key.Key;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.ShadowColor;
 import net.kyori.adventure.text.format.TextColor;
@@ -38,7 +39,8 @@ import java.util.Map;
 @SuperBuilder
 public abstract class Element {
   private final String id;
-  private final String font;
+  private final String fontString;
+  private final Key font;
   private final TextColor color;
   private final boolean shadow;
   private final ShadowColor shadowColor;

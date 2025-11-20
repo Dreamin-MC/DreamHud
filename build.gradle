@@ -7,7 +7,7 @@ plugins {
 }
 
 group = 'fr.dreamin'
-version = '1.0.1'
+version = '1.0.2'
 description = "API for manage Hud"
 
 def name = "DreamHud"

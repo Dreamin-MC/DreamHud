@@ -103,8 +103,7 @@ DreamHud is part of the **Dreamin Ecosystem**, a set of modular projects designe
 
 | Project | Description |
 |--------|--------------|
-| 🧠 **DreaminAPI** | Central and abstract API common to all modules. |
-| 💬 **DreaminTabList** | Advanced TabList management, fully customizable. |
+| 🧠 **DreamAPI** | Central and abstract API common to all modules. |
 | 🌈 **DreamHud** | Dynamic display of HUDs and overlays. |
 
 ---

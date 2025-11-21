@@ -81,7 +81,7 @@ public void onEnable() {
 | **HudService** | Main entry point of the API. Manages adding, updating, and removing HUDs for players. |
 | **Hud** | Represents a full visual layer (HUD) rendered through a bossbar. |
 | **Layout** | Defines element positioning, backgrounds, and spacing. |
-| **Element** | A displayable unit, such as `TextElement`, `TranslatableElement`, or `ImageElement`. |
+| **Element** | A displayable unit, such as `TextElement`, `TranslatableElement`, or `IconElement`. |
 | **BarHud** | Internal wrapper using a bossbar to display multiple HUDs for a player. |
 | **HPlayer** | Represents a player instance that manages active BarHUDs. |
 
